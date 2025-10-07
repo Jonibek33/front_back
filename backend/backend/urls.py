@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from posts.views import PostsAPIView
+from posts.views import PostsAPIView, PostItemApiViev
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', PostsAPIView.as_view(), name="posts"),
+    path('posts/<int:pk>', PostItemApiViev.as_view(), name="post-item"),
 ]
